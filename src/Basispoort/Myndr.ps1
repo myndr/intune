@@ -195,7 +195,13 @@ function Uninstall-MyndrExtensions
 			id = 'mkifbbniaiblfbhcadmfchalcmkmoepo'
 		}
 		[pscustomobject]@{
+			id = 'bgoljgoooefjbaeojjfefbabkhcnhojg'
+		}
+		[pscustomobject]@{
 			id = 'hmgiofkfdfmocnbdlaieodfpmlpockka'
+		}
+		[pscustomobject]@{
+			id = 'gefgignjfgonchhgoinfdgbioakdlmkj'
 		}
 		[pscustomobject]@{
 			id = 'nfggfbiabomkkkeeflcbkakpilammmhn'

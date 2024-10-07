@@ -249,6 +249,18 @@ function Uninstall-MyndrExtensions
 		[pscustomobject]@{
 			id = 'mkifbbniaiblfbhcadmfchalcmkmoepo'
 		}
+		[pscustomobject]@{
+			id = 'bgoljgoooefjbaeojjfefbabkhcnhojg'
+		}
+		[pscustomobject]@{
+			id = 'hmgiofkfdfmocnbdlaieodfpmlpockka'
+		}
+		[pscustomobject]@{
+			id = 'gefgignjfgonchhgoinfdgbioakdlmkj'
+		}
+		[pscustomobject]@{
+			id = 'nfggfbiabomkkkeeflcbkakpilammmhn'
+		}
 	)
 
 	# Array of paths to remove
