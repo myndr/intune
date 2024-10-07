@@ -29,10 +29,11 @@ Take the following steps to install the Myndr Add-on for Edge and Myndr Extensio
 20. Review and click "Create"
 
 To speed up propagation, force synchronization as follows:
-21. Click "Devices" and "All devices"
-22. Click "Bulk actions for device"
-23. Select "Windows", "Physical devices" and "Synchronization"
-24. Click "Next" and review the devices you want to sync
-25. Click "Next" and "Create"
+
+1. Click "Devices" and "All devices"
+2. Click "Bulk actions for device"
+3. Select "Windows", "Physical devices" and "Synchronization"
+4. Click "Next" and review the devices you want to sync
+5. Click "Next" and "Create"
 
 Within a couple of hours all users in the assigned group should have the Myndr Add-on for Edge and Myndr Extension for Chrome installed. 
