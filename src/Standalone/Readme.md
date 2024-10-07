@@ -5,7 +5,7 @@ Take the following steps to install the Myndr Add-on for Edge and Myndr Extensio
 2. Open [Intune](https://intune.microsoft.com/) and go to Apps > All apps.
 2. Click "➕ Add", select app type **Windows app (Win32)**, click "Select"
 3. Click "Select app package file", click "Select a file", select the **Install-Myndr.intunewin** package and click "OK"
-4. Type "_Myndr_" in the **Publisher** field and click "Next"
+4. Type `Myndr` in the **Publisher** field and click "Next"
 5. Type `Install-Myndr.cmd <classroom-code> ` in the **Install command** field
 6. Replace `<classroom-code>` with the Myndr classroom code for the current user group e.g. `Install-Myndr.cmd 1234`
 7. Type `Uninstall-Myndr.cmd` in the **Uninstall command** * field
@@ -17,11 +17,11 @@ Take the following steps to install the Myndr Add-on for Edge and Myndr Extensio
 13. Select the applicable minimum OS and click "Next"
 14. Select "Manually configured detection rules" and click "Add"
 15. Select "Registry" as **Rule type**
-16. Copy: `HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Edge\ExtensionSettings\ioagfbkdbiaocmlmhepflbbjmalpdgod` and paste it in the **Key path** field
+16. Copy: `HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Edge\ExtensionSettings\gefgignjfgonchhgoinfdgbioakdlmkj` and paste it in the **Key path** field
 17. Select "Key exists" as **Detection method**, click "OK"
 18. Click "Add" again
 15. Select "Registry" as **Rule type**
-16. Copy: `HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Google\Chrome\ExtensionSettings\afphljjmbndfchfkdpegkckkcbejepik` and paste it in the **Key path** field
+16. Copy: `HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Google\Chrome\ExtensionSettings\bgoljgoooefjbaeojjfefbabkhcnhojg` and paste it in the **Key path** field
 17. Select "Key exists" as **Detection method**, click "OK" and click "Next"
 18. Click "Next" at **Dependencies**, "Next" at **Supercedence**
 19. Assign the group that should be associated with the classroom code from step 5 and click "Next"
