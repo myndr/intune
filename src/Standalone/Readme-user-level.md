@@ -1,15 +1,15 @@
 # Install the Myndr Intune package
+### User level
 Take the following steps to install the Myndr Add-on for Edge and Myndr Extension for Chrome in the right user groups:
 
 1. [Build](https://github.com/myndr/intune/tree/main) or [download](https://github.com/myndr/intune/releases) the Standalone Intune package.
 2. Open [Intune](https://intune.microsoft.com/) and go to Apps > All apps.
 2. Click "➕ Add", select app type **Windows app (Win32)**, click "Select"
 3. Click "Select app package file", click "Select a file", select the **Install-Myndr.intunewin** package and click "OK"
-4. Type "_Myndr_" in the **Publisher** field and click "Next"
-5. Type "_Install-Myndr.cmd_" in the **Install command** * field
-6. Add the Myndr classroom code for the current user group
-   - e.g. for Classroom Code 1234: Type `Install-Myndr.cmd 1234` in the **Install command** * field
-7. Type "_Uninstall-Myndr.cmd_" in the **Uninstall command** * field
+4. Type `Myndr` in the **Publisher** field and click "Next"
+5. Type `Install-Myndr.cmd <classroom-code> user` in the **Install command** field
+6. Replace `<classroom-code>` with the Myndr classroom code for the current user group e.g. `Install-Myndr.cmd 1234 user`
+8. Type `Uninstall-Myndr.cmd` in the **Uninstall command** * field
 8. Select "No" for **Allow available uninstall**
 9. Select "User" for **Install behavior**
 10. Select "No specific action" for **Device restart behavior**

@@ -18,17 +18,17 @@ IF "%AI_CRC%"=="0" (
     SET inact=0
 )
 
-:: Second is distractions
+:: Second is level
 if [%2]==[] (
-    REM Do not allow distractions
-    SET dist=0
+    REM Default MACHINE level
+    SET level=machine
 ) else (
-    REM Allow distractions
-    SET dist=%2
+    REM Set level to argument
+    SET level=%2
 )
 
 Echo "Start install ==============================================="  >*>> C:\Users\Public\myndr_log.txt
-powershell.exe -ExecutionPolicy Bypass -command "& '.\Myndr.ps1' -command install %args% -allowinactive %inact% -distractions %dist%"  >> C:\Users\Public\myndr_log.txt
+powershell.exe -ExecutionPolicy Bypass -command "& '.\Myndr.ps1' -command install %args% -allowinactive %inact% -level %level%"  >> C:\Users\Public\myndr_log.txt
 
 exit 0
 
