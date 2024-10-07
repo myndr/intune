@@ -1,6 +1,8 @@
 # Install the Myndr Intune package
 Take the following steps to install the Myndr Add-on for Edge and Myndr Extension for Chrome in the right device groups:
 
+_The install procedure removes all previously installed Myndr extensions._
+
 1. [Build](https://github.com/myndr/intune/tree/main) or [download](https://github.com/myndr/intune/releases) the Standalone Intune package.
 2. Open [Intune](https://intune.microsoft.com/) and go to Apps > All apps.
 2. Click "➕ Add", select app type **Windows app (Win32)**, click "Select"
