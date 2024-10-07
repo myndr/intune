@@ -18,11 +18,11 @@ Take the following steps to install the Myndr Add-on for Edge and Myndr Extensio
 13. Select the applicable minimum OS and click "Next"
 14. Select "Manually configured detection rules" and click "Add"
 15. Select "Registry" as **Rule type**
-16. Copy: `HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Edge\ExtensionSettings\ioagfbkdbiaocmlmhepflbbjmalpdgod` and paste it in the **Key path** field
+16. Copy: `HKEY_CURRENT_USER\SOFTWARE\Policies\Microsoft\Edge\ExtensionSettings\ioagfbkdbiaocmlmhepflbbjmalpdgod` and paste it in the **Key path** field
 17. Select "Key exists" as **Detection method**, click "OK"
 18. Click "Add" again
 15. Select "Registry" as **Rule type**
-16. Copy: `HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Google\Chrome\ExtensionSettings\afphljjmbndfchfkdpegkckkcbejepik` and paste it in the **Key path** field
+16. Copy: `HKEY_CURRENT_USER\SOFTWARE\Policies\Google\Chrome\ExtensionSettings\afphljjmbndfchfkdpegkckkcbejepik` and paste it in the **Key path** field
 17. Select "Key exists" as **Detection method**, click "OK" and click "Next"
 18. Click "Next" at **Dependencies**, "Next" at **Supercedence**
 19. Assign the group that should be associated with the classroom code from step 5 and click "Next"
