@@ -1,4 +1,4 @@
-# Install the Myndr IntuneWin package
+# Install the Myndr Intune package
 Take the following steps to install the Myndr Add-on for Edge and Myndr Extension for Chrome in the right user groups:
 
 1. Open [Intune](https://intune.microsoft.com/) and go to Apps > All apps.
@@ -16,10 +16,21 @@ Take the following steps to install the Myndr Add-on for Edge and Myndr Extensio
 13. Select the applicable minimum OS and click "Next"
 14. Select "Manually configured detection rules" and click "Add"
 15. Select "Registry" as **Rule type**
-16. Type "HKEY_CURRENT_USER\SOFTWARE\Myndr" in the **Key path** field
+16. Copy: `HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Edge\ExtensionSettings\ioagfbkdbiaocmlmhepflbbjmalpdgod` and paste it in the **Key path** field
+17. Select "Key exists" as **Detection method**, click "OK"
+18. Click "Add" again
+15. Select "Registry" as **Rule type**
+16. Copy: `HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Google\Chrome\ExtensionSettings\afphljjmbndfchfkdpegkckkcbejepik` and paste it in the **Key path** field
 17. Select "Key exists" as **Detection method**, click "OK" and click "Next"
 18. Click "Next" at **Dependencies**, "Next" at **Supercedence**
 19. Assign the group that should be associated with the classroom code from step 5 and click "Next"
 20. Review and click "Create"
+
+To speed up propagation, force synchronization as follows:
+21. Click "Devices" and "All devices"
+22. Click "Bulk actions for device"
+23. Select "Windows", "Physical devices" and "Synchronization"
+24. Click "Next" and review the devices you want to sync
+25. Click "Next" and "Create"
 
 Within a couple of hours all users in the assigned group should have the Myndr Add-on for Edge and Myndr Extension for Chrome installed. 

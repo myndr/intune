@@ -1,4 +1,4 @@
-# Install the Myndr IntuneWin package
+# Install the Myndr Intune package
 Take the following steps to install the Myndr Add-on for Edge and Myndr Extension for Chrome in the right user groups:
 
 1. Open [Intune](https://intune.microsoft.com/) and go to Apps > All apps.
@@ -24,6 +24,8 @@ Take the following steps to install the Myndr Add-on for Edge and Myndr Extensio
 18. Click "Next" at **Dependencies**, "Next" at **Supercedence**
 19. Assign the device group and click "Next"
 20. Review and click "Create"
+
+To speed up propagation, force synchronization as follows:
 21. Click "Devices" and "All devices"
 22. Click "Bulk actions for device"
 23. Select "Windows", "Physical devices" and "Synchronization"
