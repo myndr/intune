@@ -27,13 +27,23 @@ $global:browsers = @(
 		pin_word = 'toolbar_pin';
 		pin_state = 'force_pinned'
 	}
+	# As long as the extension is not in the store:
 	[pscustomobject]@{
 		id = 2;
 		browser = 'Microsoft\Edge';
-		extID = 'nfggfbiabomkkkeeflcbkakpilammmhn' ;
+		extID = 'ighhbagifpldogkegacgffbneljjaoif' ;
+		uurl = 'https://iswit.ch/';
 		pin_word = 'toolbar_state';
 		pin_state = 'force_shown'
 	}
+	# Once the extension IS in the store:
+#	[pscustomobject]@{
+#		id = 2;
+#		browser = 'Microsoft\Edge';
+#		extID = 'nfggfbiabomkkkeeflcbkakpilammmhn' ;
+#		pin_word = 'toolbar_state';
+#		pin_state = 'force_shown'
+#	}
 )
 
 function Install-MyndrExtension
@@ -88,12 +98,18 @@ function Install-MyndrExtension
 
 		$confLocation = "SOFTWARE\Policies\" + $browser.browser + "\ExtensionSettings\" + $browser.extID
 
-		## Pin
 		If (!(Test-Path "registry::HKEY_LOCAL_MACHINE\$confLocation"))
 		{
 			New-Item -Path "registry::HKEY_LOCAL_MACHINE\$confLocation" -Force
 		}
+		## Pin
 		New-ItemProperty -Path "registry::HKEY_LOCAL_MACHINE\$confLocation" -Name $browser.pin_word -Value $browser.pin_state -PropertyType STRING -Force
+		## Ext url
+		if ($browser.PSobject.Properties.Name -contains "uurl")
+		{
+			New-ItemProperty -Path "registry::HKEY_LOCAL_MACHINE\$confLocation" -Name "override_update_url" -Value "1" -PropertyType STRING -Force
+			New-ItemProperty -Path "registry::HKEY_LOCAL_MACHINE\$confLocation" -Name "installation_mode" -Value "force_installed" -PropertyType STRING -Force
+		}
 
 		## ================================
 	}

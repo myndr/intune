@@ -18,7 +18,7 @@ _The install procedure removes all previously installed Myndr extensions._
 13. Select the applicable minimum OS and click "Next"
 14. Select "Manually configured detection rules" and click "Add"
 15. Select "Registry" as **Rule type**
-16. Copy: `HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Edge\ExtensionSettings\nfggfbiabomkkkeeflcbkakpilammmhn` and paste it in the **Key path** field
+16. Copy: `HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Edge\ExtensionSettings\ighhbagifpldogkegacgffbneljjaoif` and paste it in the **Key path** field
 17. Select "Key exists" as **Detection method**, click "OK"
 18. Click "Add" again
 15. Select "Registry" as **Rule type**
