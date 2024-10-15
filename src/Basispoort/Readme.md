@@ -7,9 +7,9 @@ _The install procedure removes all previously installed Myndr extensions._
 2. Open [Intune](https://intune.microsoft.com/) and go to Apps > All apps.
 2. Click "➕ Add", select app type **Windows app (Win32)**, click "Select"
 3. Click "Select app package file", click "Select a file", select the **Install-Myndr.intunewin** package and click "OK"
-4. Type "_Myndr_" in the **Publisher** field and click "Next"
-5. Type "_Install-Myndr.cmd_" in the **Install command** * field
-7. Type "_Uninstall-Myndr.cmd_" in the **Uninstall command** * field
+4. Type `Myndr` in the **Publisher** field and click "Next"
+5. Type `Myndr.cmd install` in the **Install command** * field
+7. Type `Myndr.cmd uninstall` in the **Uninstall command** * field
 8. Select "No" for **Allow available uninstall**
 9. Keep **Install behavior** at "System"
 10. Select "No specific action" for **Device restart behavior**
