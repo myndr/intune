@@ -12,10 +12,10 @@ _Each of the install procedures attempts to remove all previously installed Mynd
 ## Basispoort
 Take the following steps to install the Myndr Add-on for Edge and Myndr Extension for Chrome in the right device groups:
 
-1. Download the latest [Intune package for Basispoort](https://github.com/myndr/intune/releases) from the releases page.
+1. Download the latest [Intune package for Basispoort](https://github.com/myndr/intune/releases) (`Myndr-Basispoort.intunewin`) from the releases page.
 2. Open [Intune](https://intune.microsoft.com/) and go to Apps > All apps.
 2. Click "➕ Add", select app type **Windows app (Win32)**, click "Select"
-3. Click "Select app package file", click "Select a file", select the package you just built or downloaded and click "OK"
+3. Click "Select app package file", click "Select a file", select the `Myndr-Basispoort.intunewin` package you just downloaded and click "OK"
 4. Type `Myndr` in the **Publisher** field and click "Next"
 5. Type `Myndr.cmd` in the **Install command** * field
 7. Type `Myndr.cmd uninstall` in the **Uninstall command** * field
@@ -38,17 +38,16 @@ Take the following steps to install the Myndr Add-on for Edge and Myndr Extensio
 20. Review and click "Create"
 
 ## Stand-alone
-
 In case your school does not use Basispoort for student SSO, we offer a means to install Myndr either on machine or on user level.
 In both cases you need to supply the Myndr classroom code during the install procedure.
 
 ### 2. Stand-alone Machine level
 Take the following steps to install the Myndr Add-on for Edge and Myndr Extension for Chrome in the right device groups:
 
-1. Download the latest [Standalone Intune package](https://github.com/myndr/intune/releases).
+1. Download the latest [Standalone Intune package](https://github.com/myndr/intune/releases) (`Myndr-Standalone.intunewin`).
 2. Open [Intune](https://intune.microsoft.com/) and go to Apps > All apps.
 2. Click "➕ Add", select app type **Windows app (Win32)**, click "Select"
-3. Click "Select app package file", click "Select a file", select the **Install-Myndr.intunewin** package and click "OK"
+3. Click "Select app package file", click "Select a file", select the `Myndr-Standalone.intunewin` package and click "OK"
 4. Type `Myndr` in the **Publisher** field and click "Next"
 5. Type `Myndr.cmd -crc <classroom-code> ` in the **Install command** field
 6. Replace `<classroom-code>` with the Myndr classroom code for the current user group e.g. `Myndr.cmd -crc 1234`
@@ -72,13 +71,12 @@ Take the following steps to install the Myndr Add-on for Edge and Myndr Extensio
 20. Review and click "Create"
 
 ### 3. Stand-alone User level
-
 Take the following steps to install the Myndr Add-on for Edge and Myndr Extension for Chrome in the right user groups:
 
-1. [Build](h##-building) or [download](https://github.com/myndr/intune/releases) the Standalone Intune package.
+1. [Build](h##-building) or [download](https://github.com/myndr/intune/releases) the Standalone Intune package (`Myndr-Standalone.intunewin`).
 2. Open [Intune](https://intune.microsoft.com/) and go to Apps > All apps.
 2. Click "➕ Add", select app type **Windows app (Win32)**, click "Select"
-3. Click "Select app package file", click "Select a file", select the **Install-Myndr.intunewin** package and click "OK"
+3. Click "Select app package file", click "Select a file", select the `Myndr-Standalone.intunewin` package and click "OK"
 4. Type `Myndr` in the **Publisher** field and click "Next"
 5. Type `Myndr.cmd -crc <classroom-code> -level user` in the **Install command** field
 6. Replace `<classroom-code>` with the Myndr classroom code for the current user group e.g. `Myndr.cmd -crc 1234 -level user`
