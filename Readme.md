@@ -16,7 +16,7 @@ Take the following steps to install the Myndr Add-on for Edge and Myndr Extensio
 2. Open [Intune](https://intune.microsoft.com/) and go to Apps > All apps.
 2. Click "➕ Add", select app type **Windows app (Win32)**, click "Select"
 3. Click "Select app package file", click "Select a file", select the `Myndr-Basispoort.intunewin` package you just downloaded and click "OK"
-4. Type `Myndr` in the **Publisher** field and click "Next"
+4. Type `Myndr` in the **Publisher** field, type the release version in the **Version** field and click "Next"
 5. Type `Myndr.cmd` in the **Install command** * field
 7. Type `Myndr.cmd uninstall` in the **Uninstall command** * field
 8. Select "No" for **Allow available uninstall**
@@ -48,7 +48,7 @@ Take the following steps to install the Myndr Add-on for Edge and Myndr Extensio
 2. Open [Intune](https://intune.microsoft.com/) and go to Apps > All apps.
 2. Click "➕ Add", select app type **Windows app (Win32)**, click "Select"
 3. Click "Select app package file", click "Select a file", select the `Myndr-Standalone.intunewin` package and click "OK"
-4. Type `Myndr` in the **Publisher** field and click "Next"
+4. Type `Myndr` in the **Publisher** field, type the release version in the **Version** field and click "Next"
 5. Type `Myndr.cmd -crc <classroom-code> ` in the **Install command** field
 6. Replace `<classroom-code>` with the Myndr classroom code for the current user group e.g. `Myndr.cmd -crc 1234`
 7. Type `Myndr.cmd -command uninstall` in the **Uninstall command** * field
@@ -77,7 +77,7 @@ Take the following steps to install the Myndr Add-on for Edge and Myndr Extensio
 2. Open [Intune](https://intune.microsoft.com/) and go to Apps > All apps.
 2. Click "➕ Add", select app type **Windows app (Win32)**, click "Select"
 3. Click "Select app package file", click "Select a file", select the `Myndr-Standalone.intunewin` package and click "OK"
-4. Type `Myndr` in the **Publisher** field and click "Next"
+4. Type `Myndr` in the **Publisher** field, type the release version in the **Version** field and click "Next"
 5. Type `Myndr.cmd -crc <classroom-code> -level user` in the **Install command** field
 6. Replace `<classroom-code>` with the Myndr classroom code for the current user group e.g. `Myndr.cmd -crc 1234 -level user`
 8. Type `Myndr.cmd -command uninstall` in the **Uninstall command** * field
