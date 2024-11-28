@@ -102,11 +102,13 @@ function Install-MyndrExtension
 		{
 			New-Item -Path "registry::HKEY_LOCAL_MACHINE\$confLocation" -Force
 		}
-		## Pin
+		## Pin to bar
 		New-ItemProperty -Path "registry::HKEY_LOCAL_MACHINE\$confLocation" -Name $browser.pin_word -Value $browser.pin_state -PropertyType STRING -Force
+
 		## Ext url
 		if ($browser.PSobject.Properties.Name -contains "uurl")
 		{
+			New-ItemProperty -Path "registry::HKEY_LOCAL_MACHINE\$confLocation" -Name "update_url" -Value $browser.uurl -PropertyType STRING -Force
 			New-ItemProperty -Path "registry::HKEY_LOCAL_MACHINE\$confLocation" -Name "override_update_url" -Value "1" -PropertyType STRING -Force
 			New-ItemProperty -Path "registry::HKEY_LOCAL_MACHINE\$confLocation" -Name "installation_mode" -Value "force_installed" -PropertyType STRING -Force
 		}
