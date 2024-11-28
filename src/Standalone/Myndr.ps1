@@ -1,5 +1,5 @@
 <#
-Install Myndr extension to Edge & Chrome to increase effectiveness of laptop use in the classroom
+Install Myndr extension to Edge to increase effectiveness of laptop use in the classroom
 
 Command: powershell.exe Myndr.ps1
 Arguments:
@@ -21,14 +21,8 @@ param(
 	[string]$level = 'machine'
 )
 
-# Configuration for Both Google Chrome and Microsoft Edge
+# Configuration for only Microsoft Edge
 $global:browsers = @(
-	[pscustomobject]@{
-		id = 1; browser = 'Google\Chrome';
-		extID = 'afphljjmbndfchfkdpegkckkcbejepik';
-		pin_word = 'toolbar_pin';
-		pin_state = 'force_pinned'
-	}
 	[pscustomobject]@{
 		id = 2;
 		browser = 'Microsoft\Edge';
@@ -266,11 +260,8 @@ function Uninstall-MyndrExtensions
 	# Array of paths to remove
 	$toRemove = @()
 
-	# Configuration paths for both Google Chrome and Microsoft Edge
+	# Configuration paths for only Microsoft Edge
 	$installs = @(
-		[pscustomobject]@{
-			browser = 'Google\Chrome'
-		}
 		[pscustomobject]@{
 			browser = 'Microsoft\Edge'
 		}
@@ -279,7 +270,7 @@ function Uninstall-MyndrExtensions
 	# Repeat for both browsers
 	$installs | ForEach-Object {
 		$install = $_
-		$installLocation = "SOFTWARE\Policies\" + $install.browser + "\ExtensionInstallForcelist"
+		$installLocation = "SOFTWARE\Policies\" + $install.browser + "\D:"
 		$confLocation = "SOFTWARE\Policies\" + $install.browser + "\3rdparty\extensions"
 
 		$extension_ids | ForEach-Object {

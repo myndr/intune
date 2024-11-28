@@ -1,5 +1,5 @@
 <#
-Install Myndr Basispoort extension to Edge & Chrome
+Install Myndr Basispoort extension to Edge
 
 Command: powershell.exe Myndr-BP.ps1 -command install
 Arguments:
@@ -9,6 +9,7 @@ Arguments:
 
 Example direct (test) usage:
 powershell.exe Myndr-BP.ps1 -command install
+powershell.exe Myndr-BP.ps1 -command instal
 
 #>
 
@@ -18,15 +19,8 @@ param(
 	[string]$command = 'install'
 )
 
-# Configuration for Both Google Chrome and Microsoft Edge
+# Configuration only for Microsoft Edge
 $global:browsers = @(
-	[pscustomobject]@{
-		id = 1;
-		browser = 'Google\Chrome';
-		extID = 'hmgiofkfdfmocnbdlaieodfpmlpockka' ;
-		pin_word = 'toolbar_pin';
-		pin_state = 'force_pinned'
-	}
 	# As long as the extension is not in the store:
 	[pscustomobject]@{
 		id = 2;
@@ -230,11 +224,8 @@ function Uninstall-MyndrExtensions
 	# Array of paths to remove
 	$toRemove = @()
 
-	# Configuration paths for both Google Chrome and Microsoft Edge
+	# Configuration paths for Microsoft Edge
 	$installs = @(
-		[pscustomobject]@{
-			browser = 'Google\Chrome'
-		}
 		[pscustomobject]@{
 			browser = 'Microsoft\Edge'
 		}
