@@ -1,136 +1,43 @@
-# Myndr intune package `.intunewin`
+# Installing Myndr in Microsoft Intune
+
+
+>When your school doesn't use Basispoort, [please refer to the separate guide](./Readme-standalone.md).
+
+
+
 
 ## Installing
-You can install Myndr via Intune for different environment set-ups:
-1. **Basispoort** - use this if your school uses Basispoort for student SSO.
-2. **Stand-alone Machine level** - use this if your school _doesn't use Basispoort_ and the students have their "own" designated device.
-3. **Stand-alone User level** - use this if your school _doesn't use Basispoort_ and the students DO NOT have ~~their "own" designated device~~.
+Installing Myndr is done by adding a configuration policy in Intune and assigning it to the student groups.  
+We've created a configuration policy file for your convenience. This configuration policy also takes care of the requirements needed to make Myndr run smoothly and to make sure students are forced to comply to the usage.  
+You can [read more about the configuration policy file in this separate document](./src/Basispoort/policy.basispoort-wr.md).
 
 
-_Each of the install procedures attempts to remove all previously installed Myndr extensions._
+Take the following steps to fix requirements and install Myndr for Edge and Chrome in the right device groups:
 
-## Basispoort
-Take the following steps to install the Myndr Add-on for Edge and Myndr Extension for Chrome in the right device groups:
-
-1. Download the latest [Intune package for Basispoort](https://github.com/myndr/intune/releases) (`Myndr-Basispoort.intunewin`) from the releases page.
-2. Open [Intune](https://intune.microsoft.com/) and go to Apps > All apps.
-2. Click "➕ Add", select app type **Windows app (Win32)**, click "Select"
-3. Click "Select app package file", click "Select a file", select the `Myndr-Basispoort.intunewin` package you just downloaded and click "OK"
-4. Type `Myndr` in the **Publisher** field, type the release version in the **Version** field and click "Next"
-5. Type `Myndr.cmd` in the **Install command** * field
-7. Type `Myndr.cmd uninstall` in the **Uninstall command** * field
-8. Select "No" for **Allow available uninstall**
-9. Keep **Install behavior** at "System"
-10. Select "No specific action" for **Device restart behavior**
-11. Click "Next"
-12. Select the applicable architectures that are used by the user group
-13. Select the applicable minimum OS and click "Next"
-14. Select "Manually configured detection rules" and click "Add"
-15. Select "Registry" as **Rule type**
-16. Copy: `HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Edge\ExtensionSettings\ighhbagifpldogkegacgffbneljjaoif` and paste it in the **Key path** field
-17. Select "Key exists" as **Detection method**, click "OK"
-18. Click "Add" again
-15. Select "Registry" as **Rule type**
-16. Copy: `HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Google\Chrome\ExtensionSettings\hmgiofkfdfmocnbdlaieodfpmlpockka` and paste it in the **Key path** field
-17. Select "Key exists" as **Detection method**, click "OK" and click "Next"
-18. Click "Next" at **Dependencies**, "Next" at **Supercedence**
-19. Assign the device group and click "Next"
-20. Review and click "Create"
-
-## Stand-alone
-In case your school does not use Basispoort for student SSO, we offer a means to install Myndr either on machine or on user level.
-In both cases you need to supply the Myndr classroom code during the install procedure.
-
-### 2. Stand-alone Machine level
-Take the following steps to install the Myndr Add-on for Edge and Myndr Extension for Chrome in the right device groups:
-
-1. Download the latest [Standalone Intune package](https://github.com/myndr/intune/releases) (`Myndr-Standalone.intunewin`).
-2. Open [Intune](https://intune.microsoft.com/) and go to Apps > All apps.
-2. Click "➕ Add", select app type **Windows app (Win32)**, click "Select"
-3. Click "Select app package file", click "Select a file", select the `Myndr-Standalone.intunewin` package and click "OK"
-4. Type `Myndr` in the **Publisher** field, type the release version in the **Version** field and click "Next"
-5. Type `Myndr.cmd -crc <classroom-code> ` in the **Install command** field
-6. Replace `<classroom-code>` with the Myndr classroom code for the current user group e.g. `Myndr.cmd -crc 1234`
-7. Type `Myndr.cmd -command uninstall` in the **Uninstall command** * field
-8. Select "No" for **Allow available uninstall**
-9. Select "User" for **Install behavior**
-10. Select "No specific action" for **Device restart behavior**
-11. Click "Next"
-12. Select the applicable architectures that are used by the user group
-13. Select the applicable minimum OS and click "Next"
-14. Select "Manually configured detection rules" and click "Add"
-15. Select "Registry" as **Rule type**
-16. Copy: `HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Edge\ExtensionSettings\ioagfbkdbiaocmlmhepflbbjmalpdgod` and paste it in the **Key path** field
-17. Select "Key exists" as **Detection method**, click "OK"
-18. Click "Add" again
-15. Select "Registry" as **Rule type**
-16. Copy: `HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Google\Chrome\ExtensionSettings\afphljjmbndfchfkdpegkckkcbejepik` and paste it in the **Key path** field
-17. Select "Key exists" as **Detection method**, click "OK" and click "Next"
-18. Click "Next" at **Dependencies**, "Next" at **Supercedence**
-19. Assign the group that should be associated with the classroom code from step 5 and click "Next"
-20. Review and click "Create"
-
-### 3. Stand-alone User level
-Take the following steps to install the Myndr Add-on for Edge and Myndr Extension for Chrome in the right user groups:
-
-1. [Build](h##-building) or [download](https://github.com/myndr/intune/releases) the Standalone Intune package (`Myndr-Standalone.intunewin`).
-2. Open [Intune](https://intune.microsoft.com/) and go to Apps > All apps.
-2. Click "➕ Add", select app type **Windows app (Win32)**, click "Select"
-3. Click "Select app package file", click "Select a file", select the `Myndr-Standalone.intunewin` package and click "OK"
-4. Type `Myndr` in the **Publisher** field, type the release version in the **Version** field and click "Next"
-5. Type `Myndr.cmd -crc <classroom-code> -level user` in the **Install command** field
-6. Replace `<classroom-code>` with the Myndr classroom code for the current user group e.g. `Myndr.cmd -crc 1234 -level user`
-8. Type `Myndr.cmd -command uninstall` in the **Uninstall command** * field
-8. Select "No" for **Allow available uninstall**
-9. Select "User" for **Install behavior**
-10. Select "No specific action" for **Device restart behavior**
-11. Click "Next"
-12. Select the applicable architectures that are used by the user group
-13. Select the applicable minimum OS and click "Next"
-14. Select "Manually configured detection rules" and click "Add"
-15. Select "Registry" as **Rule type**
-16. Copy: `HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Edge\ExtensionSettings\ioagfbkdbiaocmlmhepflbbjmalpdgod` and paste it in the **Key path** field
-17. Select "Key exists" as **Detection method**, click "OK"
-18. Click "Add" again
-15. Select "Registry" as **Rule type**
-16. Copy: `HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Google\Chrome\ExtensionSettings\afphljjmbndfchfkdpegkckkcbejepik` and paste it in the **Key path** field
-17. Select "Key exists" as **Detection method**, click "OK" and click "Next"
-18. Click "Next" at **Dependencies**, "Next" at **Supercedence**
-19. Assign the group that should be associated with the classroom code from step 5 and click "Next"
-20. Review and click "Create"
-
-### Synchronization
-To speed up propagation, force synchronization as follows:
-21. Click "Devices" and "All devices"
-22. Click "Bulk actions for device"
-23. Select "Windows", "Physical devices" and "Synchronization"
-24. Click "Next" and review the devices you want to sync
-25. Click "Next" and "Create"
-
-Within a couple of hours all users or devices in the assigned user or device group should have the Myndr Add-on for Edge and Myndr Extension for Chrome installed.
+1. Download the latest [Intune configuration policy file](./src/Basispoort/Myndr_Basispoort-with-requirements.policy.json) from the repository. 
+2. Log in at [Microsoft Intune ](https://intune.microsoft.com/)
+3. Click _Devices_ > _Windows_ > _Configuration_
+4. Click _Create_ and click _Import policy_
+5. Drag and drop the downloaded JSON file at the designated field
+6. Type "Myndr" in the _New name*_ field (Or "Myndr-Beta" if you're installing the Beta version)
+7. Type "Install Myndr and configure requirements" in the _New description_ field
+8. Click _Save_ and click _View policy_
+9. Click _Edit_ right next to _Assignments_
+10. Under _Included groups_, click _Add groups_
+11. Check all groups you want to install Myndr to and click _Select_
+12. Click _Review + save_
+13. Review what you did and click _Save_
 
 
-## Building
-To build the IntuneWin package yourself, take the following steps:
+### Speed up propagation
+Sometimes Windows devices do not sync very quickly when theyre managed from Intune.  
+To try to speed up propagation, you can do the following:
 
+1. Click "Devices" and "All devices"
+2. Click "Bulk actions for device"
+3. Select "Windows", "Physical devices" and "Synchronization"
+4. Click "Next" and review the devices you want to sync
+5. Click "Next" and "Create"
 
-### Preparation
-Download and extract the official `IntuneWinAppUtile.exe` by Microsoft from https://github.com/Microsoft/Microsoft-Win32-Content-Prep-Tool/ on a Windows machine.  
-Copy the executable to `C:\Windows\system32`
+Within a couple of hours all devices in the assigned user group should have the requirements set, the Myndr Add-on for Edge and Myndr Extension for Chrome installed.
 
-### Packaging
-Open an elevated command prompt and type:
-```
-IntuneWinAppUtil.exe
-```
-The executable will reply with a couple of questions:  
-`Please specify the source folder:` type the path to the package you want to create, e.g. `D:\src\Basispoort`  
-`Please specify the setup file:` - `Myndr.cmd`  
-`Please specify the output folder:` - `D:\build\ `  
-`Do you want to specify catalog folder (Y/N)?` - `n`  
-
-The package will be successfully created when the output says:  
-`INFO   Done!!!`
-
-The package will be at:  
-`D:\build\Myndr.intunewin`
