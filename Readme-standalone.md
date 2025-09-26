@@ -87,7 +87,7 @@ To build the IntuneWin package yourself, take the following steps:
 
 
 ### Preparation
-Download and extract the official `IntuneWinAppUtile.exe` by Microsoft from https://github.com/Microsoft/Microsoft-Win32-Content-Prep-Tool/ on a Windows machine.  
+Download and extract the official `IntuneWinAppUtil.exe` by Microsoft from https://github.com/Microsoft/Microsoft-Win32-Content-Prep-Tool/ on a Windows machine.  
 Copy the executable to `C:\Windows\system32`
 
 ### Packaging
