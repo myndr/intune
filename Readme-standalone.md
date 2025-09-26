@@ -1,5 +1,7 @@
 # Myndr intune package `.intunewin`
-When your school doesn't use Basispoort, you can best use the Intune Win package.
+If your school doesn't use Basispoort, you can best use the Intune Win package.  
+If your school DOES use Basispoor, please refer to the [main Readme](./Readme.md)
+
 ## Installing
 You can install the stand-alone version of Myndr via Intune for different environment set-ups:
 1. **Stand-alone Machine level** - use this if your school _doesn't use Basispoort_ and the students have their "own" designated device.
