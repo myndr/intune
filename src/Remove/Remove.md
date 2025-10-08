@@ -12,7 +12,7 @@ Take the following steps to install the removal tool in the right device groups:
 4. Type `Myndr` in the **Publisher** field and click "Next"
 5. Type `Remove-Myndr.cmd` in the **Install command** field
 7. Type `Remove-Myndr.cmd -command uninstall` in the **Uninstall command** * field
-10. Select "No specific action" for **Device restart behavior**
+10. Select "Intune will force a mandatory device restart" for **Device restart behavior**
 11. Click "Next"
 12. Leave the **Check operating system architecture** option set to "No..."
 13. Select the applicable minimum OS and click "Next"
