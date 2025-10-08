@@ -113,6 +113,7 @@ function Uninstall-MyndrExtensions
 		$install = $_
 		$installLocation = "SOFTWARE\Policies\" + $install.browser + "\ExtensionInstallForcelist"
 		$confLocation = "SOFTWARE\Policies\" + $install.browser + "\3rdparty\extensions"
+		$settingsLocation = "SOFTWARE\Policies\" + $install.browser + "\ExtensionSettings"
 
 		$extension_ids | ForEach-Object {
 			$ext_id = $_.id
@@ -123,6 +124,9 @@ function Uninstall-MyndrExtensions
 			# Remove configuration for current user
 			$toRemove += Remove-Configuration -path "registry::HKEY_CURRENT_USER\$confLocation" -id $ext_id
 			$toRemove += Remove-Configuration -path "registry::HKEY_LOCAL_MACHINE\$confLocation" -id $ext_id
+			# Remove extension settings for current user
+			$toRemove += Remove-Configuration -path "registry::HKEY_CURRENT_USER\$settingsLocation" -id $ext_id
+			$toRemove += Remove-Configuration -path "registry::HKEY_LOCAL_MACHINE\$settingsLocation" -id $ext_id
 
 			# Remove extension for all users
 			# Remove configuration and installindicator (redundant) for all users
@@ -130,6 +134,7 @@ function Uninstall-MyndrExtensions
 				$user = $_.PSChildName
 				Remove-ForceInstall -path "registry::HKEY_USERS\$user\$installLocation" -id $ext_id
 				$toRemove += Remove-Configuration -path "registry::HKEY_USERS\$user\$confLocation" -id $ext_id
+				$toRemove += Remove-Configuration -path "registry::HKEY_USERS\$user\$settingsLocation" -id $ext_id
 				$toRemove += "registry::HKEY_USERS\$user\SOFTWARE\Myndr"
 			}
 		}
