@@ -28,12 +28,12 @@ Take the following steps to install the removal tool in the right device groups:
 20. Review and click "Create"
 
 ### Synchronization
-To speed up propagation, force synchronization as follows:
-21. Click "Devices" and "All devices"
-22. Click "Bulk actions for device"
-23. Select "Windows", "Physical devices" and "Synchronization"
-24. Click "Next" and review the devices you want to sync
-25. Click "Next" and "Create"
+To speed up propagation, force synchronization as follows:  
+1. Click "Devices" and "All devices"
+2. Click "Bulk actions for device"
+3. Select "Windows", "Physical devices" and "Synchronization"
+4. Click "Next" and review the devices you want to sync
+5. Click "Next" and "Create"
 
 Within a couple of hours all users or devices in the assigned user or device group should have the Myndr Add-on for Edge and Myndr Extension for Chrome removed.
 
